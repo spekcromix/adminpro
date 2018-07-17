@@ -92,12 +92,12 @@ export class UsuarioService {
     console.log( url );
     return this.http.put( url, usuario )
       .map( (resp: any) => {
-        
+
         if ( usuario._id === this.usuario._id ) {
           const usuarioDB: Usuario = resp.usuario;
           this.guardarStorage( usuarioDB._id, this.token, usuarioDB );
         }
-        
+
         swal('Usuario actualizado', usuario.nombre, 'success');
 
         return true;
@@ -138,7 +138,7 @@ export class UsuarioService {
                 .map( resp => {
                   swal('Usuario borrado', 'El usuario a sido eliminado correctamente', 'success');
                   return true;
-                })
+                });
   }
 
 }
