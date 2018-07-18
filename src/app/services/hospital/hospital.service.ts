@@ -3,6 +3,8 @@ import { URL_SERVICIOS } from '../../config/config';
 import { HttpClient } from '@angular/common/http';
 import { Hospital } from '../../models/hospital.model';
 import { UsuarioService } from '../usuario/usuario.service';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/throw';
 
 @Injectable()
 export class HospitalService {
@@ -70,7 +72,7 @@ export class HospitalService {
     return this.http.put( url, hospital )
                 .map( (resp: any) => {
                   swal('Hospital actualizado', hospital.nombre, 'success');
-      
+
                   return resp.hospital;
                 });
   }

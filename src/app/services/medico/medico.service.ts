@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
-import { Medico } from '../../../../Material-de-la-tarea-Seccio-n-16/medico.model';
 import { UsuarioService } from '../usuario/usuario.service';
 import { Medico } from '../../models/medico.model';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/throw';
 
 @Injectable()
 export class MedicoService {
@@ -73,7 +74,7 @@ export class MedicoService {
                   return resp.medico;
                 });
     }
-    
+
   }
 
 }
